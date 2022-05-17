@@ -1,0 +1,103 @@
+/******* sign up ********/
+
+.SignUp {
+  padding-top: 12vh;
+  min-height: 100vh;
+  font-size: 1rem;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 70vw;
+  margin-left: 20vw;
+  box-shadow: 4px 4px 4px rgb(51, 51, 51);
+}
+
+.signUp-heading {
+  font-size: 3.5vh;
+  font-weight: 600;
+  margin: 1.5rem 0 2rem 0;
+}
+
+.signUp-Container {
+  width: 25vw;
+  height: 70vh;
+  background-color: var(--white-color);
+  border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  margin: 1rem;
+}
+
+.signup-contents {
+  width: 18vw;
+  height: 53vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+
+.signup-contents input {
+  height: 3.5vh;
+}
+
+.userAgreement {
+  margin: 0 1rem;
+}
+
+.signup-contents label {
+  font-weight: 600;
+}
+
+.check {
+  display: flex;
+  align-items: center;
+  margin: 1rem 0;
+}
+
+.signup-btns {
+  border: none;
+  width: 85%;
+  padding: 6px;
+  margin: 0 2vw;
+}
+
+.createNewAccount-btn {
+  background-color: red;
+}
+
+.createNewAccount-btn:hover {
+  background-color: darkred;
+  color: var(--white-color);
+}
+
+.toLoginPage-btn {
+  background-color: var(--white-color);
+  padding: 1rem 0;
+}
+
+.signup-contents input {
+  padding: 1rem;
+}
+
+/********** mobile mode *********/
+
+@media only screen and (max-width: 800px) {
+  .signUp-Container {
+    width: 40vw;
+  }
+
+  .signup-contents {
+    width: 36vw;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .signUp-Container {
+    width: 80vw;
+  }
+
+  .signup-contents {
+    width: 60vw;
+  }
+}
