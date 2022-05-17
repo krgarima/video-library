@@ -1,0 +1,71 @@
+.video-card {
+  height: 19rem;
+  width: 21rem;
+  margin: 1.5rem;
+  border-radius: 10px;
+  border: 1px solid rgb(69, 69, 4);
+  box-shadow: 4px 4px 4px rgb(51, 51, 51);
+  background-color: rgb(51, 51, 51);
+}
+
+.video-link {
+  height: 10rem;
+  margin: 1rem;
+}
+
+.video-img {
+  margin-top: 1.2rem;
+  width: 90%;
+}
+
+.title {
+  margin: 1rem;
+  font-size: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.title i {
+  margin-top: 6px;
+  cursor: pointer;
+}
+
+.creator {
+  margin: 1rem;
+  font-size: 12px;
+}
+
+.views-time {
+  margin: 1rem;
+  display: flex;
+  justify-content: space-between;
+}
+
+.fa-ellipsis-v {
+  position: relative;
+}
+
+.options {
+  position: absolute;
+  top: 1.3rem;
+  right: 0;
+  width: 11rem;
+  height: fit-content;
+  background-color: #262626;
+  border: 2px solid gray;
+  font-weight: 100;
+}
+
+.options li {
+  list-style: none;
+  padding: 10px;
+  cursor: pointer;
+}
+
+.options li:hover {
+  background-color: rgb(68, 67, 67);
+}
+
+.showOptions {
+  visibility: hidden;
+}

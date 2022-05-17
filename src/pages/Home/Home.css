@@ -1,0 +1,12 @@
+.home {
+  width: 70vw;
+  margin-left: 18vw;
+}
+
+.video-container {
+  width: 112%;
+  margin: 23vh 2vw 0 2vw;
+  display: flex;
+  flex-wrap: wrap;
+  color: white;
+}
