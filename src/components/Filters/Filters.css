@@ -1,0 +1,18 @@
+.filter {
+  height: 8vh;
+  width: 82%;
+  position: fixed;
+  top: 10vh;
+  background-color: rgb(51, 51, 51);
+  color: white;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.filter button {
+  padding: 5px 2rem;
+  margin: 1rem;
+  border-radius: 1rem;
+  cursor: pointer;
+}
