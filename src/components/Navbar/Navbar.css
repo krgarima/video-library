@@ -1,0 +1,50 @@
+.navbar {
+  height: 10vh;
+  width: 100%;
+  background-color: rgb(42, 41, 41);
+  color: white;
+  position: fixed;
+  top: 0;
+  border-bottom: 1px solid rgb(57, 56, 56);
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.logo {
+  width: 18vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  font-size: 2rem;
+}
+
+.searchArea {
+  width: 65vw;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.searchArea input {
+  width: 35vw;
+  height: 1.8rem;
+  border-radius: 1rem;
+  border: none;
+  background-color: lightgray;
+}
+
+.navicons {
+  width: 15vw;
+  display: flex;
+  justify-content: space-evenly;
+  align-items: center;
+  font-size: 1rem;
+}
+
+.navicons li {
+  list-style: none;
+}
+
+.log {
+  padding: 5px 1rem;
+}
