@@ -6,36 +6,22 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 export default function Login() {
-  const { userName, setUserName, password, setPassword, setLogged } =
+  const { userName, setUserName, password, setPassword } =
     useContext(AuthContext);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
-    const encodedToken = localStorage.getItem("token");
-
     try {
       const response = await axios.post(`/api/auth/login`, {
         email: userName,
         password: password,
       });
-
       localStorage.setItem("token", response.data.encodedToken);
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
-
-    if (
-      encodedToken ||
-      (userName === "adarshbalika@neog.camp" && password === "password")
-    ) {
-      setLogged(true);
-      navigate("/");
-    } else {
-      setLogged(false);
-      setUserName("");
-      setPassword("");
-    }
+    navigate(-1);
   };
 
   const setDummyData = async (e) => {

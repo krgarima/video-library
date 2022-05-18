@@ -8,6 +8,9 @@ import { AuthContextProvider } from "./context/auth-context";
 import { FilterContextProvider } from "./context/filter-context";
 import { VideoListContextProvider } from "./context/video-context";
 
+import { Provider } from "react-redux";
+import { store } from "./app/store";
+
 import "./index.css";
 
 // Call make Server
@@ -19,7 +22,9 @@ ReactDOM.render(
       <AuthContextProvider>
         <FilterContextProvider>
           <VideoListContextProvider>
-            <App />
+            <Provider store={store}>
+              <App />
+            </Provider>
           </VideoListContextProvider>
         </FilterContextProvider>
       </AuthContextProvider>
