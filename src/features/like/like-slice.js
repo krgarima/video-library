@@ -1,7 +1,7 @@
 import { createSlice, createAsyncThunk } from "@reduxjs/toolkit";
 import axios from "axios";
 
-const encodedToken = localStorage.getItem("token");
+let encodedToken = "";
 
 const initialState = {
   likes: [],
@@ -12,6 +12,7 @@ export const addToLikes = createAsyncThunk(
   "likes/addToLikes",
   async (video) => {
     try {
+      encodedToken = localStorage.getItem("token");
       const res = await axios.post(
         "/api/user/likes",
         { video },
@@ -32,6 +33,7 @@ export const removeFromLiked = createAsyncThunk(
   "likes/removeFromLiked",
   async (videoId) => {
     try {
+      encodedToken = localStorage.getItem("token");
       const res = await axios.delete(`/api/user/likes/${videoId}`, {
         headers: {
           authorization: encodedToken,

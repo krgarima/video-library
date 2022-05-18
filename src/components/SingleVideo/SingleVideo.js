@@ -8,9 +8,7 @@ import { addToLikes, removeFromLiked } from "../../features/like/like-slice";
 import "./SingleVideo.css";
 
 export default function SingleVideo() {
-  const encodedToken = localStorage.getItem("token");
   const { videoList } = useContext(videoListContext);
-
   const videoId = useParams();
   const dispatch = useDispatch();
   let location = useLocation();
