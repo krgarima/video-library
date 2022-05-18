@@ -1,0 +1,20 @@
+.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.like-container {
+  width: 112%;
+  margin: 23vh 2vw 0 2vw;
+  color: white;
+}
+
+.redirect-login-btn {
+  position: relative;
+  top: 30vh;
+  left: 30vw;
+  padding: 1rem;
+  font-size: 1.5rem;
+  border-radius: 5px;
+  cursor: pointer;
+}
