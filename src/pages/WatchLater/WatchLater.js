@@ -10,8 +10,8 @@ export default function WatchLater() {
   let watched = useSelector((state) => state.watchLater.watchLater);
 
   const selectOptions = [
-    { name: "Add to likes", functionCall: "" },
-    { name: "Remove from watch later", functionCall: "" },
+    { name: "Add to likes", functionCall: "addToLikes" },
+    { name: "Remove from watch later", functionCall: "removeFromWatchLater" },
   ];
 
   return (

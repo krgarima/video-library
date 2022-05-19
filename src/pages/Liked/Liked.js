@@ -10,9 +10,9 @@ export default function Liked() {
   const likedVideos = useSelector((state) => state.likes);
 
   const selectOptions = [
-    { name: "Add to likes", functionCall: "" },
-    { name: "Add to Watch later", functionCall: "" },
-    { name: "Remove from likes", functionCall: "" },
+    { name: "Add to likes", functionCall: "addToLikes" },
+    { name: "Add to Watch later", functionCall: "addToWatchLater" },
+    { name: "Remove from likes", functionCall: "removeFromLiked" },
   ];
 
   return (

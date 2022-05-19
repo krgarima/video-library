@@ -1,8 +1,51 @@
-import React from "react";
-import "./Signup.css";
+import React, { useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { Link } from "react-router-dom";
+import axios from "axios";
+import "./Signup.css";
 
 export default function Signup() {
+  const [userData, setUserData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    password: "",
+    newPassword: "",
+  });
+  const [disable, setDisable] = useState(true);
+  const [error, setError] = useState(false);
+  const navigate = useNavigate();
+
+  console.log(error);
+
+  const signupHandler = async () => {
+    if (
+      !userData.firstName ||
+      !userData.lastName ||
+      !userData.email ||
+      !userData.password ||
+      !userData.newPassword ||
+      userData.password !== userData.newPassword ||
+      !userData.email.includes("@")
+    ) {
+      setError(true);
+      return;
+    }
+
+    try {
+      const response = await axios.post(`/api/auth/signup`, {
+        firstName: userData.firstName,
+        lastName: userData.lastName,
+        email: userData.email,
+        password: userData.password,
+      });
+      localStorage.setItem("token", response.data.encodedToken);
+      navigate("/");
+    } catch (error) {
+      alert(error);
+    }
+  };
+
   return (
     <aside className="SignUp center">
       <form className="signUp-Container">
@@ -16,6 +59,10 @@ export default function Signup() {
             className="userNm"
             id="userFName"
             placeholder="Enter your First Name"
+            value={userData.firstName}
+            onChange={(event) =>
+              setUserData({ ...userData, firstName: event.target.value })
+            }
           />
           <br />
           <label htmlFor="userLName" className="userNm">
@@ -26,6 +73,10 @@ export default function Signup() {
             className="userNm"
             id="userLName"
             placeholder="Enter your Last Name"
+            value={userData.lastName}
+            onChange={(event) =>
+              setUserData({ ...userData, lastName: event.target.value })
+            }
           />
           <br />
           <label htmlFor="userEmail" className="userNm">
@@ -36,6 +87,10 @@ export default function Signup() {
             className="userNm"
             id="userEmail"
             placeholder="johndoe@gmail.com"
+            value={userData.email}
+            onChange={(event) =>
+              setUserData({ ...userData, email: event.target.value })
+            }
           />
           <br />
           <label htmlFor="userNewPswd" className="userPswd">
@@ -46,6 +101,10 @@ export default function Signup() {
             className="userPswd"
             id="userNewPswd"
             placeholder="Enter a new password"
+            value={userData.password}
+            onChange={(event) =>
+              setUserData({ ...userData, password: event.target.value })
+            }
           />
           <br />
           <label htmlFor="userRetypePswd" className="userPswd">
@@ -56,6 +115,10 @@ export default function Signup() {
             className="userPswd"
             id="userRetypePswd"
             placeholder="Re-type your password"
+            value={userData.newPassword}
+            onChange={(event) =>
+              setUserData({ ...userData, newPassword: event.target.value })
+            }
           />
           <br />
           <div className="check">
@@ -64,13 +127,22 @@ export default function Signup() {
               name="userAgreement"
               className="userAgreement"
               id="userAgreement"
+              onClick={() => setDisable(!disable)}
             />
             <label htmlFor="userAgreement">
               I accept all Terms & Conditions
             </label>
           </div>
           <br />
-          <button className="signup-btns createNewAccount-btn">
+          <button
+            disabled={disable}
+            className="signup-btns createNewAccount-btn"
+            onClick={(event) => {
+              event.preventDefault();
+              signupHandler();
+              console.log("clicked");
+            }}
+          >
             Create my New Account
           </button>
           <br />
@@ -79,6 +151,7 @@ export default function Signup() {
           </button>
         </div>
       </form>
+      {error && <div className="signIn-error">Invalid input !</div>}
     </aside>
   );
 }

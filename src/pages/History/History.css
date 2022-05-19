@@ -1,0 +1,20 @@
+.history-video {
+  position: relative;
+}
+
+.fa-trash-alt {
+  position: absolute;
+  right: -5%;
+}
+
+.like-container {
+  position: relative;
+}
+
+.clear-history {
+  position: absolute;
+  top: -5%;
+  right: 1%;
+  font-size: 0.8rem;
+  cursor: pointer;
+}

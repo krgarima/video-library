@@ -15,8 +15,6 @@ export default function Navbar() {
         <input />
       </div>
       <ul className="navicons">
-        <li>icon</li>
-
         <button
           className="log"
           onClick={() => {
@@ -31,6 +29,9 @@ export default function Navbar() {
         >
           {encodedToken ? "Log Out" : " Log In"}
         </button>
+        <li>
+          <i className="fas fa-2x fa-user-circle"></i>
+        </li>
       </ul>
     </div>
   );
