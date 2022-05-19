@@ -23,15 +23,19 @@ export default function Playlist() {
           {playlists.length === 1 ? "playlist" : "playlists"} )
         </h1>
         <div className="flex-wrap">
-          {encodedToken
-            ? playlists.map((playlistCard) => (
-                <div key={playlistCard._id}>
-                  <Link to={`/ShowPlaylist/${playlistCard._id}`}>
-                    <PlaylistCard playlistCard={playlistCard} />
-                  </Link>
-                </div>
-              ))
-            : ""}
+          {encodedToken ? (
+            playlists.map((playlistCard) => (
+              <div key={playlistCard._id}>
+                <Link to={`/ShowPlaylist/${playlistCard._id}`}>
+                  <PlaylistCard playlistCard={playlistCard} />
+                </Link>
+              </div>
+            ))
+          ) : (
+            <Link to="/login">
+              <button className="redirect-login-btn">Log in first</button>
+            </Link>
+          )}
         </div>
       </div>
     </aside>
