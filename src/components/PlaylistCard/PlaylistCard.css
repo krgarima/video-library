@@ -1,4 +1,5 @@
 .playlist-card {
+  height: 10rem;
   width: 21rem;
   margin: 1.5rem;
   border-radius: 10px;
@@ -7,6 +8,7 @@
 
 .playlist-video-img {
   width: 100%;
+  height: 10rem;
 }
 
 .shadowEffect {
@@ -24,6 +26,7 @@
   position: absolute;
   top: 25%;
   left: 40%;
+  color: white;
 }
 
 .vid {
@@ -31,6 +34,7 @@
   position: absolute;
   top: 48%;
   left: 25%;
+  color: white;
 }
 
 .playlist-title {
@@ -38,5 +42,5 @@
   position: absolute;
   bottom: 10%;
   left: 45%;
-  /* color: white; */
+  color: white;
 }
