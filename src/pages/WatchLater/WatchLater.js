@@ -2,6 +2,7 @@ import React from "react";
 import Filters from "../../components/Filters/Filters";
 import VideoCard from "../../components/VideoCard/VideoCard";
 import { useSelector } from "react-redux";
+import { Link } from "react-router-dom";
 import "./WatchLater.css";
 
 export default function WatchLater() {
@@ -19,16 +20,17 @@ export default function WatchLater() {
       <div className="watch-later-container">
         <h1 className="third-heading">Watch later videos ({watched.length})</h1>
         <div className="flex-wrap">
-          {encodedToken
-            ? watched.map((watchedVideo) => (
-                <div className="bs" key={watchedVideo._id}>
-                  <VideoCard
-                    video={watchedVideo}
-                    selectOptions={selectOptions}
-                  />
-                </div>
-              ))
-            : ""}
+          {encodedToken ? (
+            watched.map((watchedVideo) => (
+              <div className="bs" key={watchedVideo._id}>
+                <VideoCard video={watchedVideo} selectOptions={selectOptions} />
+              </div>
+            ))
+          ) : (
+            <Link to="/login">
+              <button className="redirect-login-btn">Log in first</button>
+            </Link>
+          )}
         </div>
       </div>
     </aside>

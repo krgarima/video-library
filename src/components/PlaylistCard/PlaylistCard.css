@@ -1,0 +1,53 @@
+.playlist-card {
+  height: 10rem;
+  width: 21rem;
+  margin: 1.5rem;
+  border-radius: 10px;
+  position: relative;
+}
+
+.playlist-video-img {
+  width: 100%;
+  height: 10rem;
+}
+
+.shadowEffect {
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 50%;
+  height: 100%;
+  opacity: 0.5;
+  background-color: black;
+}
+
+.numOfVideos {
+  font-size: 2rem;
+  position: absolute;
+  top: 25%;
+  left: 40%;
+  color: white;
+}
+
+.vid {
+  font-size: 2rem;
+  position: absolute;
+  top: 48%;
+  left: 25%;
+  color: white;
+}
+
+.playlist-title {
+  font-size: 2.5rem;
+  position: absolute;
+  bottom: 10%;
+  left: 45%;
+  color: white;
+}
+
+.fa-minus-circle {
+  position: absolute;
+  right: -10%;
+  top: 2%;
+  cursor: pointer;
+}
