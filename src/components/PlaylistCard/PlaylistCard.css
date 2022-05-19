@@ -44,3 +44,10 @@
   left: 45%;
   color: white;
 }
+
+.fa-minus-circle {
+  position: absolute;
+  right: -10%;
+  top: 2%;
+  cursor: pointer;
+}

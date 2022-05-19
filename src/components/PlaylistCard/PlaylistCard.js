@@ -1,10 +1,12 @@
+import React from "react";
+import { useDispatch } from "react-redux";
+import { deletePlaylist } from "../../features/playlist/deletePlaylist-slice";
 import "./PlaylistCard.css";
 
-import React from "react";
-
 export default function PlaylistCard({ playlistCard }) {
-  const { title, videos } = playlistCard;
-  console.log(videos);
+  const dispatch = useDispatch();
+  const { title, videos, _id } = playlistCard;
+
   return (
     <div className="playlist-card">
       <img
@@ -17,6 +19,10 @@ export default function PlaylistCard({ playlistCard }) {
         <p className="vid">{videos.length === 1 ? "video" : "videos"}</p>
       </div>
       <p className="playlist-title">{title}</p>
+      <i
+        className="fas fa-2x fa-minus-circle"
+        onClick={() => dispatch(deletePlaylist(_id))}
+      ></i>
     </div>
   );
 }

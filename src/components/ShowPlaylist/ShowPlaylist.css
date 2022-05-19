@@ -1,0 +1,10 @@
+.playlist-video {
+  position: relative;
+}
+
+.fa-trash-alt {
+  position: absolute;
+  right: -1%;
+  top: 12%;
+  cursor: pointer;
+}
