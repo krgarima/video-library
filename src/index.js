@@ -7,6 +7,7 @@ import { BrowserRouter } from "react-router-dom";
 import { AuthContextProvider } from "./context/auth-context";
 import { FilterContextProvider } from "./context/filter-context";
 import { VideoListContextProvider } from "./context/video-context";
+import { SearchContextProvider } from "./context/search-context";
 
 import { Provider } from "react-redux";
 import { store } from "./app/store";
@@ -22,9 +23,11 @@ ReactDOM.render(
       <AuthContextProvider>
         <FilterContextProvider>
           <VideoListContextProvider>
-            <Provider store={store}>
-              <App />
-            </Provider>
+            <SearchContextProvider>
+              <Provider store={store}>
+                <App />
+              </Provider>
+            </SearchContextProvider>
           </VideoListContextProvider>
         </FilterContextProvider>
       </AuthContextProvider>

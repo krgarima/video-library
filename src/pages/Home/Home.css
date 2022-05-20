@@ -8,5 +8,11 @@
   margin: 23vh 2vw 0 2vw;
   display: flex;
   flex-wrap: wrap;
-  color: white;
+  color: var(--white-color);
+}
+
+@media only screen and (max-width: 500px) {
+  .video-container {
+    margin: 25vh 2vw 0 2vw;
+  }
 }

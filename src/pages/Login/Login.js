@@ -9,6 +9,7 @@ export default function Login() {
   const { userName, setUserName, password, setPassword } =
     useContext(AuthContext);
   const [error, setError] = useState(false);
+  const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
@@ -58,7 +59,7 @@ export default function Login() {
             Password
           </label>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             className="userPswd"
             id="userPswd"
             placeholder="Enter your password"
@@ -67,6 +68,12 @@ export default function Login() {
               setPassword(e.target.value);
             }}
           />
+          <i
+            className={`far ${
+              showPassword ? "fa-eye" : "fa-eye-slash"
+            } showLoginPassword`}
+            onClick={() => setShowPassword(!showPassword)}
+          ></i>
           <br />
           <div className="check">
             <input

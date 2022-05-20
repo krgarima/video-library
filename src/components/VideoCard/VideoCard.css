@@ -16,6 +16,7 @@
 .video-img {
   margin-top: 1.2rem;
   width: 90%;
+  height: 10rem;
 }
 
 .title {
@@ -51,8 +52,8 @@
   right: 0;
   width: 11rem;
   height: fit-content;
-  background-color: #262626;
-  border: 2px solid gray;
+  background-color: var(--darkGray-color3);
+  border: 2px solid var(--gray-color);
   font-weight: 100;
 }
 
@@ -68,4 +69,18 @@
 
 .showOptions {
   visibility: hidden;
+}
+
+@media only screen and (max-width: 500px) {
+  .video-card {
+    width: 18rem;
+    height: 18rem;
+  }
+}
+
+@media only screen and (max-width: 450px) {
+  .video-card {
+    width: 15rem;
+    height: 20rem;
+  }
 }

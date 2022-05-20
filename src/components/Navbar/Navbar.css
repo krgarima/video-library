@@ -3,11 +3,11 @@
 .navbar {
   height: 10vh;
   width: 100%;
-  background-color: rgb(42, 41, 41);
-  color: white;
+  background-color: var(--redishGray-color);
+  color: var(--white-color);
   position: fixed;
   top: 0;
-  border-bottom: 1px solid rgb(57, 56, 56);
+  border-bottom: 1px solid var(--darkGray-color2);
   display: flex;
   flex-wrap: wrap;
 }
@@ -19,8 +19,8 @@
   align-items: center;
   font-size: 2.1rem;
   font-weight: 800;
-  color: black;
-  -webkit-text-stroke: 2px whitesmoke;
+  color: var(--black-color);
+  -webkit-text-stroke: 2px var(--whitesmoke-color);
   font-family: "Playfair Display", serif;
   font-family: "Lobster", cursive;
 }
@@ -37,7 +37,8 @@
   height: 1.8rem;
   border-radius: 1rem;
   border: none;
-  background-color: lightgray;
+  background-color: var(--whitesmoke-color);
+  padding: 1rem;
 }
 
 .navicons {
@@ -54,4 +55,42 @@
 
 .log {
   padding: 5px 1rem;
+}
+
+.navbar .search-icon {
+  display: none;
+}
+
+.small-search {
+  display: none;
+}
+
+@media only screen and (max-width: 500px) {
+  .navbar {
+    display: flex;
+    justify-content: space-evenly;
+    align-items: center;
+  }
+  .large-search {
+    display: none;
+  }
+  .small-search {
+    display: unset;
+    position: absolute;
+    top: 10rem;
+    right: 2rem;
+  }
+  .searchArea input {
+    width: 68vw;
+  }
+  .navicons {
+    width: 50vw;
+  }
+  .logo {
+    height: 3rem;
+    margin: 0 2rem;
+  }
+  .navbar .search-icon {
+    display: unset;
+  }
 }

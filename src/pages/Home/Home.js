@@ -4,11 +4,13 @@ import Filters from "../../components/Filters/Filters";
 import VideoCard from "../../components/VideoCard/VideoCard";
 import { FilterContext } from "../../context/filter-context";
 import { videoListContext } from "../../context/video-context";
+import { SearchContext } from "../../context/search-context";
 import "./Home.css";
 
 export default function Home() {
   const { videoList, setVideoList } = useContext(videoListContext);
   const { filter } = useContext(FilterContext);
+  const { searchList } = useContext(SearchContext);
 
   const selectOptions = [
     { name: "Add to likes", functionCall: "addToLikes" },
@@ -38,6 +40,12 @@ export default function Home() {
                   <VideoCard video={video} selectOptions={selectOptions} />
                 </div>
               ))
+          : searchList.length !== 0
+          ? searchList.map((video) => (
+              <div className="bs" key={video._id}>
+                <VideoCard video={video} selectOptions={selectOptions} />
+              </div>
+            ))
           : videoList.map((video) => (
               <div className="bs" key={video._id}>
                 <VideoCard video={video} selectOptions={selectOptions} />

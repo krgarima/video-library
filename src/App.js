@@ -8,6 +8,7 @@ import Playlist from "./pages/Playlist/Playlist";
 import Liked from "./pages/Liked/Liked";
 import WatchLater from "./pages/WatchLater/WatchLater";
 import History from "./pages/History/History";
+import Profile from "./pages/Profile/Profile";
 import SingleVideo from "./components/SingleVideo/SingleVideo";
 import ShowPlaylist from "./components/ShowPlaylist/ShowPlaylist";
 
@@ -21,6 +22,7 @@ function App() {
 
       <Routes>
         <Route path="/" element={<Home />} />
+        <Route path="/myProfile" element={<Profile />} />
         <Route path="/login" element={<Login />} />
         <Route path="/signup" element={<Signup />} />
         <Route path="/playlist" element={<Playlist />} />
