@@ -11,8 +11,8 @@ export default function Home() {
   const { filter } = useContext(FilterContext);
 
   const selectOptions = [
-    { name: "Add to likes", functionCall: "" },
-    { name: "Add to Watch later", functionCall: "" },
+    { name: "Add to likes", functionCall: "addToLikes" },
+    { name: "Add to Watch later", functionCall: "addToWatchLater" },
   ];
 
   useEffect(() => {
@@ -21,7 +21,7 @@ export default function Home() {
         const data = await axios.get("/api/videos");
         setVideoList(data.data.videos);
       } catch (err) {
-        console.log(err);
+        alert(err);
       }
     })();
   }, []);

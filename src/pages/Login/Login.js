@@ -1,4 +1,4 @@
-import React, { useContext } from "react";
+import React, { useState, useContext } from "react";
 import { Link } from "react-router-dom";
 import { AuthContext } from "../../context/auth-context";
 import axios from "axios";
@@ -8,10 +8,15 @@ import "./Login.css";
 export default function Login() {
   const { userName, setUserName, password, setPassword } =
     useContext(AuthContext);
+  const [error, setError] = useState(false);
   const navigate = useNavigate();
 
   const handleLogin = async (e) => {
     e.preventDefault();
+    if (!userName || !password) {
+      setError(true);
+      return;
+    }
     try {
       const response = await axios.post(`/api/auth/login`, {
         email: userName,
@@ -91,6 +96,7 @@ export default function Login() {
           </button>
         </div>
       </form>
+      {error && <div className="signIn-error">Invalid input !</div>}
     </aside>
   );
 }

@@ -1,7 +1,9 @@
-import React, { useState, useContext } from "react";
-import { useLocation, useParams } from "react-router-dom";
+import React, { useState, useContext, useEffect } from "react";
+import { useLocation, useParams, useNavigate } from "react-router-dom";
 import { videoListContext } from "../../context/video-context";
 import { useDispatch, useSelector } from "react-redux";
+import { ToastContainer, toast } from "react-toastify";
+import "react-toastify/dist/ReactToastify.css";
 
 import { addToLikes, removeFromLiked } from "../../features/like/like-slice";
 import {
@@ -14,8 +16,11 @@ import {
 } from "../../features/playlist/playlist-slice";
 
 import "./SingleVideo.css";
+import { addToHistory } from "../../features/history/history-slice";
 
 export default function SingleVideo() {
+  let encodedToken = "";
+  const navigate = useNavigate();
   const [hideSaveToPlaylist, setHideSaveToPlaylist] = useState(true);
   const [hideCreateNewPlaylist, setHideCreatePlaylist] = useState(true);
   const [newPlaylistName, setNewPlaylistName] = useState("");
@@ -23,6 +28,17 @@ export default function SingleVideo() {
   const videoId = useParams();
   const dispatch = useDispatch();
   let location = useLocation();
+
+  const notify = (msg) =>
+    toast.success(msg, {
+      position: "top-right",
+      autoClose: 3000,
+      hideProgressBar: false,
+      closeOnClick: true,
+      pauseOnHover: true,
+      draggable: true,
+      progress: undefined,
+    });
 
   let liked = useSelector((state) => state.likes.likes);
   let watched = useSelector((state) => state.watchLater.watchLater);
@@ -38,6 +54,10 @@ export default function SingleVideo() {
     (watchedVideo) => watchedVideo._id === videoId.videoId
   );
 
+  useEffect(() => {
+    dispatch(addToHistory(findVideo));
+  }, []);
+
   return (
     <aside className="singleVideo">
       <div className="video">
@@ -49,14 +69,23 @@ export default function SingleVideo() {
         {checkLiked ? (
           <i
             className={`fas fa-thumbs-up select-genre `}
-            onClick={() => dispatch(removeFromLiked(videoId.videoId))}
+            onClick={() => {
+              dispatch(removeFromLiked(videoId.videoId));
+              encodedToken = localStorage.getItem("token");
+              if (!encodedToken) navigate("/login");
+              else dispatch(removeFromLiked(videoId.videoId));
+            }}
           >
             <span>UnLike</span>
           </i>
         ) : (
           <i
             className={`far fa-thumbs-up select-genre`}
-            onClick={() => dispatch(addToLikes(findVideo))}
+            onClick={() => {
+              encodedToken = localStorage.getItem("token");
+              if (!encodedToken) navigate("/login");
+              else dispatch(addToLikes(findVideo));
+            }}
           >
             <span>Like</span>
           </i>
@@ -65,14 +94,22 @@ export default function SingleVideo() {
         {checkWatched ? (
           <i
             className={`fas fa-clock select-genre `}
-            onClick={() => dispatch(removeFromWatchLater(videoId.videoId))}
+            onClick={() => {
+              encodedToken = localStorage.getItem("token");
+              if (!encodedToken) navigate("/login");
+              else dispatch(removeFromWatchLater(videoId.videoId));
+            }}
           >
             <span>Watch later</span>
           </i>
         ) : (
           <i
             className={`far fa-clock select-genre`}
-            onClick={() => dispatch(addToWatchLater(findVideo))}
+            onClick={() => {
+              encodedToken = localStorage.getItem("token");
+              if (!encodedToken) navigate("/login");
+              else dispatch(addToWatchLater(findVideo));
+            }}
           >
             <span>Watch later</span>
           </i>
@@ -80,19 +117,23 @@ export default function SingleVideo() {
 
         <i
           className="far fa-copy select-genre"
-          onClick={() =>
+          onClick={() => {
+            notify("Link has been copied successfully!");
             navigator.clipboard.writeText(
-              "https://deploy-preview-3--guileless-baklava-4364cb" +
-                location.pathname
-            )
-          }
+              "https://vokkal.netlify.app" + location.pathname
+            );
+          }}
         >
           <span>Copy</span>
         </i>
 
         <i
           className="far fa-save select-genre"
-          onClick={() => setHideSaveToPlaylist(false)}
+          onClick={() => {
+            encodedToken = localStorage.getItem("token");
+            if (!encodedToken) navigate("/login");
+            else setHideSaveToPlaylist(false);
+          }}
         >
           <span>Save</span>
         </i>
@@ -120,6 +161,7 @@ export default function SingleVideo() {
                   name=""
                   id=""
                   onChange={() => {
+                    notify("Video added to the playlist!");
                     dispatch(addToPlaylist([findVideo, choosePlaylist._id]));
                     setHideSaveToPlaylist(true);
                   }}
@@ -163,6 +205,7 @@ export default function SingleVideo() {
             />
             <button
               onClick={() => {
+                notify("A new Playlist has been created!");
                 dispatch(createPlaylist(newPlaylistName));
                 setHideSaveToPlaylist(false);
                 setHideCreatePlaylist(true);
@@ -173,6 +216,18 @@ export default function SingleVideo() {
           </div>
         </div>
       </div>
+
+      <ToastContainer
+        position="top-right"
+        autoClose={5000}
+        hideProgressBar={false}
+        newestOnTop={false}
+        closeOnClick
+        rtl={false}
+        pauseOnFocusLoss
+        draggable
+        pauseOnHover
+      />
     </aside>
   );
 }

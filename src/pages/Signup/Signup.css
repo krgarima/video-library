@@ -10,6 +10,13 @@
   width: 70vw;
   margin-left: 20vw;
   box-shadow: 4px 4px 4px rgb(51, 51, 51);
+  position: relative;
+}
+
+.signIn-error {
+  position: absolute;
+  top: 15%;
+  color: red;
 }
 
 .signUp-heading {

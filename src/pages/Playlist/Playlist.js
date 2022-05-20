@@ -8,7 +8,8 @@ import { getPlaylist } from "../../features/playlist/playlist-slice";
 export default function Playlist() {
   const encodedToken = localStorage.getItem("token");
   const dispatch = useDispatch();
-  let playlists = useSelector((state) => state.playlist.wholePlaylist);
+  let playlists = [];
+  playlists = useSelector((state) => state.playlist.wholePlaylist);
 
   useEffect(() => {
     dispatch(getPlaylist());
@@ -19,8 +20,8 @@ export default function Playlist() {
       <Filters />
       <div className="like-container">
         <h1>
-          Playlist ( {playlists.length}{" "}
-          {playlists.length === 1 ? "playlist" : "playlists"} )
+          Playlist ( {playlists && playlists.length}{" "}
+          {playlists && playlists.length === 1 ? "playlist" : "playlists"} )
         </h1>
         <div className="flex-wrap">
           {encodedToken ? (

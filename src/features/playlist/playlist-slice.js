@@ -7,7 +7,6 @@ const initialState = {
   playlists: [], //create playlist
   playlist: [], //add to playlist
   wholePlaylist: [], //entire playlist
-  // playlistVideos: [],
   status: null,
 };
 
@@ -32,7 +31,7 @@ export const createPlaylist = createAsyncThunk(
       );
       return res.data.playlists;
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   }
 );
@@ -54,7 +53,7 @@ export const addToPlaylist = createAsyncThunk(
       );
       return res.data.playlist;
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   }
 );
@@ -71,27 +70,10 @@ export const getPlaylist = createAsyncThunk(
       });
       return res.data.playlists;
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   }
 );
-
-// export const getPlaylistVideos = createAsyncThunk(
-//   "playlist/getPlaylistVideos",
-//   async (playlistId) => {
-//     try {
-//       encodedToken = localStorage.getItem("token");
-//       const res = await axios.get(`/api/user/playlists/${playlistId}`, {
-//         headers: {
-//           authorization: encodedToken,
-//         },
-//       });
-//       return res.data.playlist;
-//     } catch (error) {
-//       console.log(error);
-//     }
-//   }
-// );
 
 const playlistSlice = createSlice({
   name: "playlist",
@@ -129,17 +111,6 @@ const playlistSlice = createSlice({
     [getPlaylist.rejected]: (state) => {
       state.status = "failed";
     },
-
-    // [getPlaylistVideos.pending]: (state) => {
-    //   state.status = "loading";
-    // },
-    // [getPlaylistVideos.fulfilled]: (state, action) => {
-    //   state.playlistVideos = action.payload;
-    //   state.status = "success";
-    // },
-    // [getPlaylistVideos.rejected]: (state) => {
-    //   state.status = "failed";
-    // },
   },
 });
 
