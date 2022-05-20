@@ -10,7 +10,7 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
-      <div className="logo">Logo</div>
+      <div className="logo">~ Vokkal ~</div>
       <div className="searchArea">
         <input />
       </div>

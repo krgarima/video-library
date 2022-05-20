@@ -21,7 +21,7 @@ export default function Home() {
         const data = await axios.get("/api/videos");
         setVideoList(data.data.videos);
       } catch (err) {
-        console.log(err);
+        alert(err);
       }
     })();
   }, []);

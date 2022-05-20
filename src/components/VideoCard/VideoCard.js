@@ -32,7 +32,6 @@ export default function VideoCard({ video, selectOptions }) {
   return (
     <div className="video-card">
       <Link className="video-link" to={`/watchvideo/${_id}`}>
-        {/* <iframe src={url} title={title} allowFullScreen></iframe> */}
         <img src={photo} alt="" srcSet="" className="video-img" />
       </Link>
       <div className="title">

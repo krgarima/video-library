@@ -20,7 +20,7 @@ export default function Playlist() {
       <Filters />
       <div className="like-container">
         <h1>
-          Playlist ( {playlists && playlists.length}
+          Playlist ( {playlists && playlists.length}{" "}
           {playlists && playlists.length === 1 ? "playlist" : "playlists"} )
         </h1>
         <div className="flex-wrap">

@@ -24,7 +24,7 @@ export const addToLikes = createAsyncThunk(
       );
       return res.data.likes;
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   }
 );
@@ -41,7 +41,7 @@ export const removeFromLiked = createAsyncThunk(
       });
       return res.data.likes;
     } catch (error) {
-      console.log(error);
+      alert(error);
     }
   }
 );
