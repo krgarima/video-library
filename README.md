@@ -73,6 +73,10 @@ This application is a Video Library application made for watching music videos.
 
 - User can see their profile by clicking on user profile icon
 
+### 10. Add notes
+
+- User can add notes on a particular video
+
 ## Tech Stack
 
 - ReactJS (useState, useContext, useEffect, React router)
