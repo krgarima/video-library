@@ -2,7 +2,7 @@
   width: 18vw;
   height: 90vh;
   background-color: rgb(51, 51, 51);
-  color: white;
+  color: var(--white-color);
   position: fixed;
   top: 10vh;
   margin-bottom: auto;
@@ -18,15 +18,29 @@
 }
 
 .sidebar:hover {
-  background-color: rgb(68, 67, 67);
+  background-color: var(--highlight-color);
 }
 
 .sidebar span,
 i {
   margin-left: 3rem;
-  color: white;
+  color: var(--white-color);
 }
 
 .activeSidebar {
-  background-color: rgb(68, 67, 67);
+  background-color: var(--highlight-color);
+}
+
+@media only screen and (max-width: 800px) {
+  .sidebar span {
+    display: none;
+    margin: 0;
+  }
+  i {
+    margin: 0;
+  }
+
+  .sidebar {
+    justify-content: center;
+  }
 }

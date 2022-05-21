@@ -1,5 +1,5 @@
 .watch-later-container {
   width: 112%;
   margin: 23vh 2vw 0 2vw;
-  color: white;
+  color: var(--white-color);
 }

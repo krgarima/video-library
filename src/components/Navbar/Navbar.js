@@ -1,19 +1,45 @@
-import React, { useContext } from "react";
+import React, { useContext, useState } from "react";
 import { AuthContext } from "../../context/auth-context";
-import { useNavigate } from "react-router-dom";
+import { SearchContext } from "../../context/search-context";
+import { videoListContext } from "../../context/video-context";
+import { useNavigate, Link } from "react-router-dom";
 import "./Navbar.css";
 
 export default function Navbar() {
+  const [searchValue, setSearchValue] = useState("");
   const { setLogged } = useContext(AuthContext);
+  const { setSearchList } = useContext(SearchContext);
+  const { videoList } = useContext(videoListContext);
   const encodedToken = localStorage.getItem("token");
+  const [showSearchBar, setShowSearchBar] = useState(false);
   const navigate = useNavigate();
+
+  const handleChange = (e) => {
+    e.preventDefault();
+    setSearchValue(e.target.value);
+    const searchedVideos = videoList.filter((videos) => {
+      if (
+        videos.title.toLowerCase().includes(e.target.value) ||
+        videos.creator.toLowerCase().includes(e.target.value) ||
+        videos.genre.toLowerCase().includes(e.target.value)
+      ) {
+        return videos;
+      }
+    });
+    setSearchList(searchedVideos);
+  };
 
   return (
     <div className="navbar">
       <div className="logo">~ Vokkal ~</div>
-      <div className="searchArea">
-        <input />
+      <div className="searchArea large-search">
+        <input value={searchValue} onChange={handleChange} />
       </div>
+      {showSearchBar && (
+        <div className="searchArea small-search">
+          <input value={searchValue} onChange={handleChange} />
+        </div>
+      )}
       <ul className="navicons">
         <button
           className="log"
@@ -30,7 +56,15 @@ export default function Navbar() {
           {encodedToken ? "Log Out" : " Log In"}
         </button>
         <li>
-          <i className="fas fa-2x fa-user-circle"></i>
+          <Link to="/myProfile">
+            <i className="fas fa-2x fa-user-circle"></i>
+          </Link>
+        </li>
+        <li>
+          <i
+            className="fas fa-2x fa-search search-icon"
+            onClick={() => setShowSearchBar(!showSearchBar)}
+          ></i>
         </li>
       </ul>
     </div>

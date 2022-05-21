@@ -9,14 +9,14 @@
   align-items: center;
   width: 70vw;
   margin-left: 20vw;
-  box-shadow: 4px 4px 4px rgb(51, 51, 51);
+  box-shadow: 4px 4px 4px var(--darkGray-color);
   position: relative;
 }
 
 .signIn-error {
   position: absolute;
   top: 15%;
-  color: red;
+  color: var(--red-color);
 }
 
 .signUp-heading {
@@ -42,6 +42,7 @@
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
+  position: relative;
 }
 
 .signup-contents input {
@@ -70,11 +71,11 @@
 }
 
 .createNewAccount-btn {
-  background-color: red;
+  background-color: var(--red-color);
 }
 
 .createNewAccount-btn:hover {
-  background-color: darkred;
+  background-color: var(--darkRed-color);
   color: var(--white-color);
 }
 
@@ -85,6 +86,21 @@
 
 .signup-contents input {
   padding: 1rem;
+}
+
+.showPassword,
+.showRePassword {
+  position: absolute;
+  color: var(--gray-color);
+}
+
+.showPassword {
+  right: 5%;
+}
+
+.showRePassword {
+  right: 5%;
+  top: 63%;
 }
 
 /********** mobile mode *********/

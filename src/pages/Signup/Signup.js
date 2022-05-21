@@ -12,11 +12,11 @@ export default function Signup() {
     password: "",
     newPassword: "",
   });
+  const [showPassword, setShowPassword] = useState(false);
+  const [showRePassword, setShowRePassword] = useState(false);
   const [disable, setDisable] = useState(true);
   const [error, setError] = useState(false);
   const navigate = useNavigate();
-
-  console.log(error);
 
   const signupHandler = async () => {
     if (
@@ -97,7 +97,7 @@ export default function Signup() {
             Password
           </label>
           <input
-            type="password"
+            type={showPassword ? "text" : "password"}
             className="userPswd"
             id="userNewPswd"
             placeholder="Enter a new password"
@@ -106,12 +106,18 @@ export default function Signup() {
               setUserData({ ...userData, password: event.target.value })
             }
           />
+          <i
+            className={`far ${
+              showPassword ? "fa-eye" : "fa-eye-slash"
+            } showPassword`}
+            onClick={() => setShowPassword(!showPassword)}
+          ></i>
           <br />
           <label htmlFor="userRetypePswd" className="userPswd">
             Confirm Password
           </label>
           <input
-            type="password"
+            type={showRePassword ? "text" : "password"}
             className="userPswd"
             id="userRetypePswd"
             placeholder="Re-type your password"
@@ -120,6 +126,12 @@ export default function Signup() {
               setUserData({ ...userData, newPassword: event.target.value })
             }
           />
+          <i
+            className={`far ${
+              showPassword ? "fa-eye" : "fa-eye-slash"
+            } showRePassword`}
+            onClick={() => setShowRePassword(!showRePassword)}
+          ></i>
           <br />
           <div className="check">
             <input
