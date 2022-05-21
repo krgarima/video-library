@@ -24,7 +24,7 @@ export const addToHistory = createAsyncThunk(
       );
       return res.data.history;
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 );
@@ -41,7 +41,7 @@ export const removeFromHistory = createAsyncThunk(
       });
       return res.data.history;
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 );
@@ -58,7 +58,7 @@ export const clearHistory = createAsyncThunk(
       });
       return res.data.history;
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 );

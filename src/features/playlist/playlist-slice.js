@@ -31,7 +31,7 @@ export const createPlaylist = createAsyncThunk(
       );
       return res.data.playlists;
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 );
@@ -53,7 +53,7 @@ export const addToPlaylist = createAsyncThunk(
       );
       return res.data.playlist;
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 );
@@ -70,7 +70,7 @@ export const getPlaylist = createAsyncThunk(
       });
       return res.data.playlists;
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 );
