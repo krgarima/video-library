@@ -21,7 +21,7 @@ export const deletePlaylist = createAsyncThunk(
       });
       return res.data.playlists;
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 );
@@ -42,7 +42,7 @@ export const deleteVideo = createAsyncThunk(
       );
       return res.data.playlist;
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 );

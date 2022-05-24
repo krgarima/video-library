@@ -18,7 +18,7 @@
 }
 
 .sidebar:hover {
-  background-color: var(--highlight-color);
+  background-color: var(--primary-color);
 }
 
 .sidebar span,
@@ -28,7 +28,7 @@ i {
 }
 
 .activeSidebar {
-  background-color: var(--highlight-color);
+  background-color: var(--primary-color);
 }
 
 @media only screen and (max-width: 800px) {

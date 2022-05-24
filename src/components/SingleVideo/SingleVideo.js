@@ -24,6 +24,8 @@ export default function SingleVideo() {
   const [hideSaveToPlaylist, setHideSaveToPlaylist] = useState(true);
   const [hideCreateNewPlaylist, setHideCreatePlaylist] = useState(true);
   const [newPlaylistName, setNewPlaylistName] = useState("");
+  const [note, setNote] = useState("");
+  const [hideAddNote, setHideAddNote] = useState(true);
   const { videoList } = useContext(videoListContext);
   const videoId = useParams();
   const dispatch = useDispatch();
@@ -215,7 +217,51 @@ export default function SingleVideo() {
             </button>
           </div>
         </div>
+
+        <i
+          className="far fa-sticky-note select-genre"
+          onClick={() => setHideAddNote(!hideAddNote)}
+        >
+          <span>Add note</span>
+        </i>
       </div>
+
+      {hideAddNote ? (
+        <div className="notes">
+          <h3>Notes : </h3>
+          <p className="addedNote">{note}</p>
+          <button
+            className="deleteNoteBtn"
+            onClick={() => {
+              notify("Deleted note!");
+              setNote("");
+            }}
+          >
+            Delete
+          </button>
+          <button className="editNoteBtn" onClick={() => setHideAddNote(false)}>
+            Edit
+          </button>
+        </div>
+      ) : (
+        <div className="addNote">
+          <h3>Add note: </h3>
+          <input
+            type="text"
+            value={note}
+            onChange={(e) => setNote(e.target.value)}
+          />
+          <button
+            className="addNoteBtn"
+            onClick={() => {
+              notify("Added note!");
+              setHideAddNote(true);
+            }}
+          >
+            Add
+          </button>
+        </div>
+      )}
 
       <ToastContainer
         position="top-right"

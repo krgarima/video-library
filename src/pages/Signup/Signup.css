@@ -71,11 +71,11 @@
 }
 
 .createNewAccount-btn {
-  background-color: var(--red-color);
+  background-color: var(--primary-color);
 }
 
 .createNewAccount-btn:hover {
-  background-color: var(--darkRed-color);
+  background-color: var(--primary-color);
   color: var(--white-color);
 }
 

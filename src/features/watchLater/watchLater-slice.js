@@ -24,7 +24,7 @@ export const addToWatchLater = createAsyncThunk(
       );
       return res.data.watchlater;
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 );
@@ -41,7 +41,7 @@ export const removeFromWatchLater = createAsyncThunk(
       });
       return res.data.watchlater;
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
   }
 );

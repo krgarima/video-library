@@ -1,6 +1,6 @@
 .video-card {
   height: 19rem;
-  width: 21rem;
+  width: 19rem;
   margin: 1.5rem;
   border-radius: 10px;
   border: 1px solid rgb(69, 69, 4);
@@ -74,7 +74,7 @@
 @media only screen and (max-width: 500px) {
   .video-card {
     width: 18rem;
-    height: 18rem;
+    height: 16rem;
   }
 }
 

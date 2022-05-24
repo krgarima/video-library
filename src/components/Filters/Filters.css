@@ -15,6 +15,13 @@
   margin: 1rem;
   border-radius: 1rem;
   cursor: pointer;
+  border: 1px solid var(--darkGray-color);
+  box-shadow: 0 8px 16px 0 rgba(0, 0, 0, 0.2), 0 6px 20px 0 rgba(0, 0, 0, 0.19);
+}
+
+.filter button:hover {
+  background-color: var(--primary-color);
+  color: var(--white-color);
 }
 
 @media only screen and (max-width: 500px) {

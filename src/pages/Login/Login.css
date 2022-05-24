@@ -113,7 +113,7 @@ a {
 
 .showLoginPassword {
   position: absolute;
-  color: --gray-color;
+  color: var(--gray-color);
   right: 3%;
   top: 30%;
 }
