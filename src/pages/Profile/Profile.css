@@ -8,12 +8,13 @@
 }
 .profile-container h1 {
   margin: 1rem 0;
+  color: var(--primary-color);
 }
 
 .user-profile {
   height: 68vh;
   width: 27vw;
-  border: 3px solid var(--red-color);
+  border: 5px solid var(--gray-color);
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -32,10 +33,13 @@
 }
 
 .user-profile button {
-  padding: 5px 2rem;
+  padding: 8px 2rem;
   margin: 8px 7rem;
   border-radius: 1rem;
   cursor: pointer;
+  background-color: var(--primary-color);
+  color: white;
+  border: none;
 }
 
 @media only screen and (max-width: 700px) {

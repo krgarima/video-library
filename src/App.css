@@ -33,7 +33,7 @@ main {
 /********** Colors ***********/
 
 :root {
-  --primary-color: blue;
+  --primary-color: rgb(3, 176, 176);
   --black-color: black;
   --white-color: white;
   --red-color: red;
@@ -50,7 +50,6 @@ main {
   --darkGray-color: rgb(51, 51, 51);
   --darkGray-color2: rgb(57, 56, 56);
   --darkGray-color3: #262626;
-  --highlight-color: rgb(68, 67, 67);
   --lightGray-color: rgb(149, 149, 149);
   --redishGray-color: rgb(42, 41, 41);
   --redishGray-color2: rgb(198, 195, 195);
