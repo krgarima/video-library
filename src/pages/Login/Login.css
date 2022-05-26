@@ -120,7 +120,7 @@ a {
 
 /********** mobile mode *********/
 
-@media only screen and (max-width: 800px) {
+/* @media only screen and (max-width: 800px) {
   .login-Container {
     width: 80vw;
   }
@@ -133,5 +133,62 @@ a {
   }
   .login-btns {
     width: 95%;
+  }
+} */
+
+@media only screen and (max-width: 1200px) {
+  .login-form {
+    width: 35vw;
+  }
+  .login-contents {
+    width: 30vw;
+  }
+  .showLoginPassword {
+    top: 33%;
+  }
+}
+
+@media only screen and (max-width: 850px) {
+  .login-form {
+    width: 40vw;
+  }
+  .login-contents {
+    width: 35vw;
+  }
+  .showLoginPassword {
+    top: 33%;
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  .login-form {
+    width: 50vw;
+  }
+  .login-contents {
+    width: 45vw;
+  }
+  .showLoginPassword {
+    top: 33%;
+  }
+}
+
+@media only screen and (max-width: 550px) {
+  .login-form {
+    width: 60vw;
+  }
+  .login-contents {
+    width: 50vw;
+  }
+  .showLoginPassword {
+    top: 33%;
+  }
+}
+
+@media only screen and (max-width: 430px) {
+  .login-form {
+    font-size: smaller;
+  }
+  .showLoginPassword {
+    top: 30%;
   }
 }

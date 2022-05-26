@@ -26,8 +26,8 @@
 }
 
 .signUp-Container {
-  width: 25vw;
-  height: 70vh;
+  width: 28vw;
+  height: 72vh;
   background-color: var(--white-color);
   border-radius: 10px;
   display: flex;
@@ -60,7 +60,7 @@
 .check {
   display: flex;
   align-items: center;
-  margin: 1rem 0;
+  margin: 5px 0;
 }
 
 .signup-btns {
@@ -81,11 +81,11 @@
 
 .toLoginPage-btn {
   background-color: var(--white-color);
-  padding: 1rem 0;
+  padding: 0.8rem 0;
 }
 
 .signup-contents input {
-  padding: 1rem;
+  padding: 0.8rem;
 }
 
 .showPassword,
@@ -105,19 +105,71 @@
 
 /********** mobile mode *********/
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1400px) {
+  .signUp-Container {
+    width: 35vw;
+    margin: 0.6rem;
+  }
+
+  .signup-contents {
+    width: 30vw;
+  }
+}
+
+@media only screen and (max-width: 1200px) {
   .signUp-Container {
     width: 40vw;
   }
 
   .signup-contents {
-    width: 36vw;
+    width: 30vw;
+  }
+}
+
+@media only screen and (max-width: 1100px) {
+  .signUp-Container {
+    width: 45vw;
+  }
+
+  .signup-contents {
+    width: 30vw;
+  }
+}
+
+@media only screen and (max-width: 950px) {
+  .signUp-Container {
+    width: 50vw;
+  }
+
+  .signup-contents {
+    width: 40vw;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .signUp-Container {
+    width: 48vw;
+  }
+
+  .signup-contents {
+    width: 40vw;
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .signUp-Container {
+    width: 55vw;
+  }
+
+  .signup-contents {
+    width: 45vw;
   }
 }
 
 @media only screen and (max-width: 500px) {
   .signUp-Container {
     width: 80vw;
+    margin: 5px;
   }
 
   .signup-contents {

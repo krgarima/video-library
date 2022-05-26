@@ -97,7 +97,7 @@ export default function Login() {
           </button>
           <br />
           <button className="login-btns dummy-btn" onClick={setDummyData}>
-            Add Dummy Username and Password
+            Login as Guest
           </button>
           <button className="login-btns toSignUpPage-btn">
             <Link to="/signup">Create New Account &gt;</Link>
