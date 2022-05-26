@@ -19,9 +19,9 @@ export default function Navbar() {
     setSearchValue(e.target.value);
     const searchedVideos = videoList.filter((videos) => {
       if (
-        videos.title.toLowerCase().includes(e.target.value) ||
-        videos.creator.toLowerCase().includes(e.target.value) ||
-        videos.genre.toLowerCase().includes(e.target.value)
+        videos.title.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        videos.creator.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        videos.genre.toLowerCase().includes(e.target.value.toLowerCase())
       ) {
         return videos;
       }

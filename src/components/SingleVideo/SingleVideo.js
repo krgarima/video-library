@@ -25,7 +25,7 @@ export default function SingleVideo() {
   const [hideCreateNewPlaylist, setHideCreatePlaylist] = useState(true);
   const [newPlaylistName, setNewPlaylistName] = useState("");
   const [note, setNote] = useState("");
-  const [hideAddNote, setHideAddNote] = useState(true);
+  const [hideAddNote, setHideAddNote] = useState(false);
   const { videoList } = useContext(videoListContext);
   const videoId = useParams();
   const dispatch = useDispatch();
@@ -46,7 +46,10 @@ export default function SingleVideo() {
   let watched = useSelector((state) => state.watchLater.watchLater);
   let newPlaylist = useSelector((state) => state.playlist.playlists);
 
-  const findVideo = videoList.find((video) => video._id === videoId.videoId);
+  let findVideo =
+    videoList.find((video) => video._id === videoId.videoId) ||
+    JSON.parse(localStorage.getItem("video"));
+  localStorage.setItem("video", JSON.stringify(findVideo));
   const { title, creator, genre, date, views, url } = findVideo;
 
   const checkLiked = liked.some(
@@ -57,7 +60,7 @@ export default function SingleVideo() {
   );
 
   useEffect(() => {
-    dispatch(addToHistory(findVideo));
+    if (localStorage.getItem("token")) dispatch(addToHistory(findVideo));
   }, []);
 
   return (
