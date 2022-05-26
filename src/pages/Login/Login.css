@@ -115,26 +115,16 @@ a {
   position: absolute;
   color: var(--gray-color);
   right: 3%;
-  top: 30%;
+  top: 33%;
 }
 
 /********** mobile mode *********/
 
-/* @media only screen and (max-width: 800px) {
-  .login-Container {
-    width: 80vw;
+@media only screen and (max-width: 1700px) {
+  .showLoginPassword {
+    top: 33%;
   }
-
-  .login-contents {
-    width: 60vw;
-  }
-  .error-auth {
-    margin-left: 0;
-  }
-  .login-btns {
-    width: 95%;
-  }
-} */
+}
 
 @media only screen and (max-width: 1200px) {
   .login-form {
@@ -142,9 +132,6 @@ a {
   }
   .login-contents {
     width: 30vw;
-  }
-  .showLoginPassword {
-    top: 33%;
   }
 }
 
@@ -155,9 +142,6 @@ a {
   .login-contents {
     width: 35vw;
   }
-  .showLoginPassword {
-    top: 33%;
-  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -166,9 +150,6 @@ a {
   }
   .login-contents {
     width: 45vw;
-  }
-  .showLoginPassword {
-    top: 33%;
   }
 }
 
@@ -179,16 +160,10 @@ a {
   .login-contents {
     width: 50vw;
   }
-  .showLoginPassword {
-    top: 33%;
-  }
 }
 
 @media only screen and (max-width: 430px) {
   .login-form {
     font-size: smaller;
-  }
-  .showLoginPassword {
-    top: 30%;
   }
 }

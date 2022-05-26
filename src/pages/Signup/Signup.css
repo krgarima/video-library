@@ -27,7 +27,7 @@
 
 .signUp-Container {
   width: 28vw;
-  height: 72vh;
+  min-height: 75vh;
   background-color: var(--white-color);
   border-radius: 10px;
   display: flex;
@@ -38,7 +38,7 @@
 
 .signup-contents {
   width: 18vw;
-  height: 53vh;
+  min-height: 53vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -104,6 +104,17 @@
 }
 
 /********** mobile mode *********/
+
+@media only screen and (max-width: 1700px) {
+  .signUp-Container {
+    width: 25vw;
+    margin: 0.6rem;
+  }
+
+  .signup-contents {
+    width: 20vw;
+  }
+}
 
 @media only screen and (max-width: 1400px) {
   .signUp-Container {
