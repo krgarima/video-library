@@ -1,7 +1,7 @@
 import React, { useEffect } from "react";
 import Filters from "../../components/Filters/Filters";
 import PlaylistCard from "../../components/PlaylistCard/PlaylistCard";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, Link } from "react-router-dom";
 import { useDispatch, useSelector } from "react-redux";
 import { getPlaylist } from "../../features/playlist/playlist-slice";
 
@@ -25,8 +25,8 @@ export default function Playlist() {
       <Filters />
       <div className="like-container">
         <h1>
-          Playlist ( {playlists && playlists.length}{" "}
-          {playlists && playlists.length === 1 ? "playlist" : "playlists"} )
+          Playlist ( {playlists.length}{" "}
+          {playlists && playlists.length <= 1 ? "playlist" : "playlists"} )
         </h1>
         <div className="flex-wrap">
           {encodedToken

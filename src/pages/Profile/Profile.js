@@ -3,8 +3,8 @@ import Filters from "../../components/Filters/Filters";
 import "./Profile.css";
 
 let user = JSON.parse(localStorage.getItem("user")) ?? {
-  name: "Adarsh Balika",
-  email: "adarshbalika@gmail.com",
+  name: "Marry Joe",
+  email: "marryjoe@gmail.com",
   mobile: "+91 9876543210",
   address: "0, Unknown address",
   dob: "10/10/9999",

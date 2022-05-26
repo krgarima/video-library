@@ -4,7 +4,7 @@
 
 .fa-trash-alt {
   position: absolute;
-  right: -1%;
-  top: 12%;
+  left: 35%;
+  bottom: -5%;
   cursor: pointer;
 }
