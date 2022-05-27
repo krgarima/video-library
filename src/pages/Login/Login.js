@@ -6,7 +6,7 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 export default function Login() {
-  const { logged, setLogged, userName, setUserName, password, setPassword } =
+  const { setLogged, userName, setUserName, password, setPassword } =
     useContext(AuthContext);
   const [error, setError] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
@@ -26,7 +26,7 @@ export default function Login() {
       setLogged(true);
       localStorage.setItem("token", response.data.encodedToken);
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
     navigate(-1);
   };
