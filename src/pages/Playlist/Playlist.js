@@ -25,12 +25,12 @@ export default function Playlist() {
       <Filters />
       <div className="like-container">
         <h1>
-          Playlist ( {playlists.length}{" "}
-          {playlists && playlists.length <= 1 ? "playlist" : "playlists"} )
+          Playlist ( {playlists?.length}{" "}
+          {playlists && playlists?.length <= 1 ? "playlist" : "playlists"} )
         </h1>
         <div className="flex-wrap">
           {encodedToken
-            ? playlists.map((playlistCard) => (
+            ? playlists?.map((playlistCard) => (
                 <div key={playlistCard._id}>
                   <Link to={`/ShowPlaylist/${playlistCard._id}`}>
                     <PlaylistCard playlistCard={playlistCard} />
@@ -38,6 +38,11 @@ export default function Playlist() {
                 </div>
               ))
             : ""}
+          {playlists?.length === 0 && (
+            <Link to="/">
+              <button className="redirect-login-btn">Watch videos</button>
+            </Link>
+          )}
         </div>
       </div>
     </aside>

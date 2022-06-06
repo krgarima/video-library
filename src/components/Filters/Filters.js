@@ -1,9 +1,11 @@
 import React, { useContext, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import { FilterContext } from "../../context/filter-context";
 import "./Filters.css";
 
 export default function Filter() {
   const { setFilter } = useContext(FilterContext);
+  const navigate = useNavigate();
   const [highlight, setHighlight] = useState({
     all: true,
     pop: false,
@@ -12,7 +14,7 @@ export default function Filter() {
   });
 
   return (
-    <div className="filter">
+    <div className="filter" onClick={() => navigate("/")}>
       <button
         className={highlight.all ? "highlight select-genre" : "select-genre"}
         onClick={() => {

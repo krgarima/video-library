@@ -1,4 +1,5 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
+import { useNavigate } from "react-router-dom";
 import Filters from "../../components/Filters/Filters";
 import "./Profile.css";
 
@@ -12,10 +13,17 @@ let user = JSON.parse(localStorage.getItem("user")) ?? {
 
 export default function Profile() {
   const [userData, setUserData] = useState(user);
+  const [saveData, setSaveData] = useState(false);
+  const navigate = useNavigate();
+
+  useEffect(() => {
+    if (localStorage.getItem("token") === null) navigate("/login");
+  }, []);
 
   const handleSubmit = (e) => {
     e.preventDefault();
-    localStorage.setItem("user", JSON.stringify(userData));
+    setSaveData(!saveData);
+    if (saveData) localStorage.setItem("user", JSON.stringify(userData));
   };
 
   return (
@@ -29,6 +37,7 @@ export default function Profile() {
             type="text"
             name=""
             id="name"
+            disabled={!saveData}
             value={userData.name}
             onChange={(e) => setUserData({ ...userData, name: e.target.value })}
           />
@@ -36,6 +45,7 @@ export default function Profile() {
           <input
             type="text"
             id="email"
+            disabled={!saveData}
             value={userData.email}
             onChange={(e) =>
               setUserData({ ...userData, email: e.target.value })
@@ -45,6 +55,7 @@ export default function Profile() {
           <input
             type="text"
             id="phone"
+            disabled={!saveData}
             value={userData.mobile}
             onChange={(e) =>
               setUserData({ ...userData, mobile: e.target.value })
@@ -54,6 +65,7 @@ export default function Profile() {
           <input
             type="text"
             id="address"
+            disabled={!saveData}
             value={userData.address}
             onChange={(e) =>
               setUserData({ ...userData, address: e.target.value })
@@ -63,11 +75,12 @@ export default function Profile() {
           <input
             type="text"
             id="dob"
+            disabled={!saveData}
             value={userData.dob}
             onChange={(e) => setUserData({ ...userData, dob: e.target.value })}
           />
           <button type="submit" onClick={handleSubmit}>
-            Save
+            {saveData ? "Save" : " Edit"}
           </button>
         </div>
       </div>

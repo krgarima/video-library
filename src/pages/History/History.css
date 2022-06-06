@@ -16,5 +16,8 @@
   top: -5%;
   right: 1%;
   font-size: 0.8rem;
+  padding: 5px 10px;
   cursor: pointer;
+  background-color: var(--primary-color);
+  border: none;
 }

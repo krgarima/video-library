@@ -2,7 +2,7 @@ import React, { useEffect } from "react";
 import Filters from "../../components/Filters/Filters";
 import VideoCard from "../../components/VideoCard/VideoCard";
 import { useSelector } from "react-redux";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
 import "./WatchLater.css";
 
 export default function WatchLater() {
@@ -11,7 +11,7 @@ export default function WatchLater() {
   let watched = useSelector((state) => state.watchLater.watchLater);
 
   const selectOptions = [
-    { name: "Add to likes", functionCall: "addToLikes" },
+    // { name: "Add to likes", functionCall: "addToLikes" },
     { name: "Remove from watch later", functionCall: "removeFromWatchLater" },
   ];
 
@@ -23,10 +23,12 @@ export default function WatchLater() {
     <aside className="home">
       <Filters />
       <div className="watch-later-container">
-        <h1 className="third-heading">Watch later videos ({watched.length})</h1>
+        <h1 className="third-heading">
+          Watch later videos ({watched?.length})
+        </h1>
         <div className="flex-wrap">
           {encodedToken
-            ? watched.map((watchedVideo) => (
+            ? watched?.map((watchedVideo) => (
                 <div className="bs" key={watchedVideo._id}>
                   <VideoCard
                     video={watchedVideo}
@@ -35,6 +37,12 @@ export default function WatchLater() {
                 </div>
               ))
             : ""}
+
+          {watched?.length === 0 && (
+            <Link to="/">
+              <button className="redirect-login-btn">Watch videos</button>
+            </Link>
+          )}
         </div>
       </div>
     </aside>

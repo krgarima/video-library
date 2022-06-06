@@ -6,8 +6,15 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 export default function Login() {
-  const { setLogged, userName, setUserName, password, setPassword } =
-    useContext(AuthContext);
+  const {
+    setLogged,
+    userName,
+    setUserName,
+    password,
+    setPassword,
+    rememberPassword,
+    setRememberPassword,
+  } = useContext(AuthContext);
   const [error, setError] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -25,6 +32,10 @@ export default function Login() {
       });
       setLogged(true);
       localStorage.setItem("token", response.data.encodedToken);
+      if (!rememberPassword) {
+        setUserName("");
+        setPassword("");
+      }
     } catch (error) {
       console.log(error);
     }
@@ -33,8 +44,8 @@ export default function Login() {
 
   const setDummyData = async (e) => {
     e.preventDefault();
-    setUserName("adarshbalika@gmail.com");
-    setPassword("adarshBalika123");
+    setUserName("marryjoe@gmail.com");
+    setPassword("marryjoe12345");
   };
 
   return (
@@ -82,11 +93,13 @@ export default function Login() {
               name="userAgreement"
               className="userAgreement"
               id="userAgreement"
+              checked={rememberPassword ? "true" : ""}
+              onClick={() => setRememberPassword(!rememberPassword)}
             />
             <label htmlFor="userAgreement">Remember me</label>
-            <Link to="/" rel="noopener noreferrer" className="forgotPswd">
+            {/* <Link to="/" rel="noopener noreferrer" className="forgotPswd">
               Forgot your password?
-            </Link>
+            </Link> */}
           </div>
           <br />
           <button

@@ -17,4 +17,10 @@
   font-size: 1.5rem;
   border-radius: 5px;
   cursor: pointer;
+  color: var(--white-color);
+  background-color: var(--primary-color);
+}
+
+.redirect-login-btn:hover {
+  border: 3px solid var(--white-color);
 }
