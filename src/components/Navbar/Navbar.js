@@ -16,12 +16,13 @@ export default function Navbar() {
 
   const handleChange = (e) => {
     e.preventDefault();
+    navigate("/");
     setSearchValue(e.target.value);
     const searchedVideos = videoList.filter((videos) => {
       if (
-        videos.title.toLowerCase().includes(e.target.value) ||
-        videos.creator.toLowerCase().includes(e.target.value) ||
-        videos.genre.toLowerCase().includes(e.target.value)
+        videos.title.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        videos.creator.toLowerCase().includes(e.target.value.toLowerCase()) ||
+        videos.genre.toLowerCase().includes(e.target.value.toLowerCase())
       ) {
         return videos;
       }
@@ -33,11 +34,19 @@ export default function Navbar() {
     <div className="navbar">
       <div className="logo">~ Vokkal ~</div>
       <div className="searchArea large-search">
-        <input value={searchValue} onChange={handleChange} />
+        <input
+          value={searchValue}
+          onChange={handleChange}
+          placeholder="Search for videos"
+        />
       </div>
       {showSearchBar && (
         <div className="searchArea small-search">
-          <input value={searchValue} onChange={handleChange} />
+          <input
+            value={searchValue}
+            onChange={handleChange}
+            placeholder="Search for videos"
+          />
         </div>
       )}
       <ul className="navicons">

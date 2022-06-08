@@ -11,6 +11,12 @@
   color: var(--white-color);
 }
 
+.fa-spinner {
+  position: relative;
+  top: 30vh;
+  left: 30vw;
+}
+
 @media only screen and (max-width: 500px) {
   .video-container {
     margin: 25vh 2vw 0 2vw;

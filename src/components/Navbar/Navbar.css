@@ -58,11 +58,10 @@
   cursor: pointer;
   border: none;
   background-color: var(--primary-color);
-  color: var(--white-color);
 }
 
-.log::before {
-  width: 80%;
+.log:hover {
+  border: 1px solid var(--primary-color);
 }
 
 .navbar .search-icon {

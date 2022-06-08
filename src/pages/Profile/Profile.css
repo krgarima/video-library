@@ -33,13 +33,14 @@
 }
 
 .user-profile button {
-  padding: 8px 2rem;
-  margin: 8px 7rem;
+  padding: 5px 2rem;
+  margin: 8px 6rem;
   border-radius: 1rem;
   cursor: pointer;
   background-color: var(--primary-color);
   color: white;
   border: none;
+  font-size: 1.1rem;
 }
 
 @media only screen and (max-width: 700px) {

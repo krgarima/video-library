@@ -29,6 +29,7 @@
 .title i {
   margin-top: 6px;
   cursor: pointer;
+  z-index: 0;
 }
 
 .creator {
@@ -55,6 +56,7 @@
   background-color: var(--darkGray-color3);
   border: 2px solid var(--gray-color);
   font-weight: 100;
+  z-index: -5;
 }
 
 .options li {
@@ -69,6 +71,52 @@
 
 .showOptions {
   visibility: hidden;
+}
+
+@media only screen and (max-width: 1350px) {
+  .video-card {
+    width: 17rem;
+    height: 18rem;
+    font-size: smaller;
+  }
+}
+
+@media only screen and (max-width: 1230px) {
+  .video-card {
+    width: 16rem;
+    height: 17rem;
+  }
+  .creator {
+    margin: 1rem;
+    font-size: 10px;
+  }
+  .video-img {
+    height: 8rem;
+  }
+}
+
+@media only screen and (max-width: 1164px) {
+  .video-card {
+    width: 15rem;
+    height: 16rem;
+  }
+  .video-img {
+    height: 7rem;
+  }
+}
+
+@media only screen and (max-width: 1102px) {
+  .video-card {
+    width: 14.5rem;
+    height: 15rem;
+  }
+  .video-img {
+    height: 6.8rem;
+  }
+  .title {
+    margin: 1rem;
+    font-size: 12px;
+  }
 }
 
 @media only screen and (max-width: 500px) {

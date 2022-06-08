@@ -13,8 +13,8 @@ export default function Home() {
   const { searchList } = useContext(SearchContext);
 
   const selectOptions = [
-    { name: "Add to likes", functionCall: "addToLikes" },
-    { name: "Add to Watch later", functionCall: "addToWatchLater" },
+    // { name: "Add to likes", functionCall: "addToLikes" },
+    // { name: "Add to Watch later", functionCall: "addToWatchLater" },
   ];
 
   useEffect(() => {
@@ -32,6 +32,9 @@ export default function Home() {
     <aside className="home">
       <Filters />
       <div className="video-container">
+        {videoList.length === 0 && (
+          <i className="fas fa-7x fa-spinner fa-pulse"></i>
+        )}
         {filter
           ? videoList
               .filter((videos) => videos.genre === filter)

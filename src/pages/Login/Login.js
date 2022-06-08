@@ -6,8 +6,15 @@ import { useNavigate } from "react-router-dom";
 import "./Login.css";
 
 export default function Login() {
-  const { userName, setUserName, password, setPassword } =
-    useContext(AuthContext);
+  const {
+    setLogged,
+    userName,
+    setUserName,
+    password,
+    setPassword,
+    rememberPassword,
+    setRememberPassword,
+  } = useContext(AuthContext);
   const [error, setError] = useState(false);
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
@@ -23,17 +30,22 @@ export default function Login() {
         email: userName,
         password: password,
       });
+      setLogged(true);
       localStorage.setItem("token", response.data.encodedToken);
+      if (!rememberPassword) {
+        setUserName("");
+        setPassword("");
+      }
     } catch (error) {
-      alert(error);
+      console.log(error);
     }
     navigate(-1);
   };
 
   const setDummyData = async (e) => {
     e.preventDefault();
-    setUserName("adarshbalika@gmail.com");
-    setPassword("adarshBalika123");
+    setUserName("marryjoe@gmail.com");
+    setPassword("marryjoe12345");
   };
 
   return (
@@ -81,11 +93,13 @@ export default function Login() {
               name="userAgreement"
               className="userAgreement"
               id="userAgreement"
+              checked={rememberPassword ? "true" : ""}
+              onClick={() => setRememberPassword(!rememberPassword)}
             />
             <label htmlFor="userAgreement">Remember me</label>
-            <Link to="/" rel="noopener noreferrer" className="forgotPswd">
+            {/* <Link to="/" rel="noopener noreferrer" className="forgotPswd">
               Forgot your password?
-            </Link>
+            </Link> */}
           </div>
           <br />
           <button
@@ -96,7 +110,7 @@ export default function Login() {
           </button>
           <br />
           <button className="login-btns dummy-btn" onClick={setDummyData}>
-            Add Dummy Username and Password
+            Login as Guest
           </button>
           <button className="login-btns toSignUpPage-btn">
             <Link to="/signup">Create New Account &gt;</Link>

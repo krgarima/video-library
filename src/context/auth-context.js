@@ -5,6 +5,7 @@ const AuthContext = createContext();
 const AuthContextProvider = ({ children }) => {
   const [userName, setUserName] = useState("");
   const [password, setPassword] = useState("");
+  const [rememberPassword, setRememberPassword] = useState(false);
   const [logged, setLogged] = useState(false);
 
   return (
@@ -17,6 +18,8 @@ const AuthContextProvider = ({ children }) => {
           setPassword,
           logged,
           setLogged,
+          rememberPassword,
+          setRememberPassword,
         }}
       >
         {children}

@@ -6,7 +6,7 @@ import { v4 as uuid } from "uuid";
 
 export const videos = [
   {
-    _id: uuid(),
+    _id: "1a",
     title: "STAY (Official Video)",
     creator: "The Kid LAROI & Justin Bieber",
     genre: "pop",
@@ -17,7 +17,7 @@ export const videos = [
   },
 
   {
-    _id: uuid(),
+    _id: "2b",
     title: "Cold Heart",
     creator: "Elton John & Dua Lipa",
     genre: "pop",
@@ -28,7 +28,7 @@ export const videos = [
   },
 
   {
-    _id: uuid(),
+    _id: "3c",
     title: "Boy With Luv",
     creator: "BTS ft. Halsey",
     genre: "pop",
@@ -39,7 +39,7 @@ export const videos = [
   },
 
   {
-    _id: uuid(),
+    _id: "4d",
     title: "Titanium",
     creator: "David Guetta ft. Sia",
     genre: "EDM",
@@ -50,7 +50,7 @@ export const videos = [
   },
 
   {
-    _id: uuid(),
+    _id: "5e",
     title: "The Nights",
     creator: "Avicii",
     genre: "EDM",
@@ -61,7 +61,7 @@ export const videos = [
   },
 
   {
-    _id: uuid(),
+    _id: "6f",
     title: "Cold water",
     creator: "Major Lazer - (ft. Justin Bieber & MØ)",
     genre: "EDM",
@@ -72,7 +72,7 @@ export const videos = [
   },
 
   {
-    _id: uuid(),
+    _id: "7g",
     title: "Without me",
     creator: "Eminem",
     genre: "Hip Hop",
@@ -83,7 +83,7 @@ export const videos = [
   },
 
   {
-    _id: uuid(),
+    _id: "8h",
     title: "Wolves",
     creator: "Big Sean ft. Post Malone",
     genre: "Hip Hop",
