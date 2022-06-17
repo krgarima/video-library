@@ -20,6 +20,10 @@ export default function Playlist() {
     if (localStorage.getItem("token") === null) navigate("/login");
   }, []);
 
+  useEffect(() => {
+    document.title = "Playlist | Vokkal Video Library";
+  }, []);
+
   return (
     <aside className="home">
       <Filters />

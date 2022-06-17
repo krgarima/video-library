@@ -18,6 +18,10 @@ export default function Signup() {
   const [error, setError] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    document.title = "Sign up | Vokkal Video Library";
+  }, []);
+
   const signupHandler = async () => {
     if (
       !userData.firstName ||

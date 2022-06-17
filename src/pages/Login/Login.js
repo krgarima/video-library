@@ -19,6 +19,10 @@ export default function Login() {
   const [showPassword, setShowPassword] = useState(false);
   const navigate = useNavigate();
 
+  useEffect(() => {
+    document.title = "Login | Vokkal Video Library";
+  }, []);
+
   const handleLogin = async (e) => {
     e.preventDefault();
     if (!userName || !password) {

@@ -28,6 +28,10 @@ export default function Home() {
     })();
   }, []);
 
+  useEffect(() => {
+    document.title = "Home | Vokkal Video Library";
+  }, []);
+
   return (
     <aside className="home">
       <Filters />

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect } from "react";
 import { Link, useParams } from "react-router-dom";
 import Filters from "../Filters/Filters";
 import VideoCard from "../VideoCard/VideoCard";
@@ -19,6 +19,10 @@ export default function ShowPlaylist() {
     { name: "Add to Watch later", functionCall: "addToWatchLater" },
     // { name: "Remove from Playlist", functionCall: "deleteVideo" },
   ];
+
+  useEffect(() => {
+    document.title = "My Playlist | Vokkal Video Library";
+  }, []);
 
   const notify = (msg) =>
     toast.success(msg, {

@@ -21,6 +21,10 @@ export default function Liked() {
     if (localStorage.getItem("token") === null) navigate("/login");
   }, []);
 
+  useEffect(() => {
+    document.title = "Likes | Vokkal Video Library";
+  }, []);
+
   return (
     <aside className="home">
       <Filters />

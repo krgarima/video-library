@@ -20,6 +20,10 @@ export default function Profile() {
     if (localStorage.getItem("token") === null) navigate("/login");
   }, []);
 
+  useEffect(() => {
+    document.title = "Profile | Vokkal Video Library";
+  }, []);
+
   const handleSubmit = (e) => {
     e.preventDefault();
     setSaveData(!saveData);

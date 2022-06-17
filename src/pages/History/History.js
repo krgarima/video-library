@@ -22,6 +22,10 @@ export default function History() {
     if (localStorage.getItem("token") === null) navigate("/login");
   }, []);
 
+  useEffect(() => {
+    document.title = "History | Vokkal Video Library";
+  }, []);
+
   return (
     <aside className="home">
       <Filters />

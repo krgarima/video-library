@@ -63,6 +63,10 @@ export default function SingleVideo() {
     if (localStorage.getItem("token")) dispatch(addToHistory(findVideo));
   }, []);
 
+  useEffect(() => {
+    document.title = "Watch video | Vokkal Video Library";
+  }, []);
+
   return (
     <aside className="singleVideo">
       <div className="video">
