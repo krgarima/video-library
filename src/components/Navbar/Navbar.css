@@ -100,4 +100,7 @@
   .navbar .search-icon {
     display: unset;
   }
+  .log {
+    padding: 6px 10px;
+  }
 }

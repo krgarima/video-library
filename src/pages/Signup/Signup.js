@@ -152,7 +152,6 @@ export default function Signup() {
             onClick={(event) => {
               event.preventDefault();
               signupHandler();
-              console.log("clicked");
             }}
           >
             Create my New Account

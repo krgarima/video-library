@@ -46,6 +46,7 @@ export default function Login() {
     e.preventDefault();
     setUserName("marryjoe@gmail.com");
     setPassword("marryjoe12345");
+    setError(false);
   };
 
   return (
@@ -63,6 +64,7 @@ export default function Login() {
             placeholder="Enter your username"
             value={userName}
             onChange={(e) => {
+              setError(false);
               setUserName(e.target.value);
             }}
           />
@@ -77,6 +79,7 @@ export default function Login() {
             placeholder="Enter your password"
             value={password}
             onChange={(e) => {
+              setError(false);
               setPassword(e.target.value);
             }}
           />

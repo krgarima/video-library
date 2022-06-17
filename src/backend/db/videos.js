@@ -7,7 +7,7 @@ import { v4 as uuid } from "uuid";
 export const videos = [
   {
     _id: "1a",
-    title: "STAY (Official Video)",
+    title: "STAY",
     creator: "The Kid LAROI & Justin Bieber",
     genre: "pop",
     date: "Jul 9, 2021",
