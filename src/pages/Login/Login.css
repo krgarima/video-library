@@ -29,7 +29,7 @@
 
 .login-contents {
   width: 19vw;
-  height: 50vh;
+  height: 48vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -38,6 +38,18 @@
 
 .login-contents input {
   padding: 0rem 6px;
+}
+
+.login-contents .userPswd {
+  width: 19vw;
+}
+
+.showLoginPassword {
+  margin: 0;
+  color: var(--gray-color);
+  position: absolute;
+  right: 0.8rem;
+  top: 5px;
 }
 
 .forgotPswd {
@@ -111,26 +123,16 @@ a {
   text-decoration: none;
 }
 
-.showLoginPassword {
-  position: absolute;
-  color: var(--gray-color);
-  right: 3%;
-  top: 33%;
-}
-
 /********** mobile mode *********/
-
-@media only screen and (max-width: 1700px) {
-  .showLoginPassword {
-    top: 33%;
-  }
-}
 
 @media only screen and (max-width: 1200px) {
   .login-form {
     width: 35vw;
   }
   .login-contents {
+    width: 30vw;
+  }
+  .login-contents .userPswd {
     width: 30vw;
   }
 }
@@ -142,6 +144,9 @@ a {
   .login-contents {
     width: 35vw;
   }
+  .login-contents .userPswd {
+    width: 35vw;
+  }
 }
 
 @media only screen and (max-width: 700px) {
@@ -151,6 +156,9 @@ a {
   .login-contents {
     width: 45vw;
   }
+  .login-contents .userPswd {
+    width: 45vw;
+  }
 }
 
 @media only screen and (max-width: 550px) {
@@ -158,6 +166,9 @@ a {
     width: 60vw;
   }
   .login-contents {
+    width: 50vw;
+  }
+  .login-contents .userPswd {
     width: 50vw;
   }
 }

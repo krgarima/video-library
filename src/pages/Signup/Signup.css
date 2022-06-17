@@ -38,7 +38,7 @@
 
 .signup-contents {
   width: 18vw;
-  min-height: 53vh;
+  min-height: 60vh;
   display: flex;
   flex-direction: column;
   justify-content: space-evenly;
@@ -47,6 +47,7 @@
 
 .signup-contents input {
   height: 3.5vh;
+  padding: 0.8rem;
 }
 
 .userAgreement {
@@ -84,23 +85,21 @@
   padding: 0.8rem 0;
 }
 
-.signup-contents input {
-  padding: 0.8rem;
+.userPswd {
+  width: 20vw;
+}
+
+.togglePswd {
+  position: relative;
 }
 
 .showPassword,
 .showRePassword {
-  position: absolute;
+  margin: 0;
   color: var(--gray-color);
-}
-
-.showPassword {
-  right: 5%;
-}
-
-.showRePassword {
-  right: 5%;
-  top: 63%;
+  position: absolute;
+  right: 0.8rem;
+  top: 4.5px;
 }
 
 /********** mobile mode *********/
@@ -125,25 +124,21 @@
   .signup-contents {
     width: 30vw;
   }
+
+  .userPswd {
+    width: 30vw;
+  }
 }
 
 @media only screen and (max-width: 1200px) {
   .signUp-Container {
     width: 40vw;
   }
-
-  .signup-contents {
-    width: 30vw;
-  }
 }
 
 @media only screen and (max-width: 1100px) {
   .signUp-Container {
     width: 45vw;
-  }
-
-  .signup-contents {
-    width: 30vw;
   }
 }
 
@@ -155,15 +150,15 @@
   .signup-contents {
     width: 40vw;
   }
+
+  .userPswd {
+    width: 40vw;
+  }
 }
 
 @media only screen and (max-width: 800px) {
   .signUp-Container {
     width: 48vw;
-  }
-
-  .signup-contents {
-    width: 40vw;
   }
 }
 
@@ -175,6 +170,10 @@
   .signup-contents {
     width: 45vw;
   }
+
+  .userPswd {
+    width: 45vw;
+  }
 }
 
 @media only screen and (max-width: 500px) {
@@ -184,6 +183,10 @@
   }
 
   .signup-contents {
+    width: 60vw;
+  }
+
+  .userPswd {
     width: 60vw;
   }
 }

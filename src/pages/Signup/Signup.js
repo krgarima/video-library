@@ -93,45 +93,58 @@ export default function Signup() {
             }
           />
           <br />
+
           <label htmlFor="userNewPswd" className="userPswd">
             Password
           </label>
-          <input
-            type={showPassword ? "text" : "password"}
-            className="userPswd"
-            id="userNewPswd"
-            placeholder="Enter a new password"
-            value={userData.password}
-            onChange={(event) =>
-              setUserData({ ...userData, password: event.target.value })
-            }
-          />
-          <i
-            className={`far ${
-              showPassword ? "fa-eye" : "fa-eye-slash"
-            } showPassword`}
-            onClick={() => setShowPassword(!showPassword)}
-          ></i>
+
+          <div>
+            <input
+              type={showPassword ? "text" : "password"}
+              className="userPswd"
+              id="userNewPswd"
+              placeholder="Enter a new password"
+              value={userData.password}
+              onChange={(event) =>
+                setUserData({ ...userData, password: event.target.value })
+              }
+            />
+            <span className="togglePswd">
+              <i
+                className={`far ${
+                  showPassword ? "fa-eye" : "fa-eye-slash"
+                } showPassword`}
+                onClick={() => setShowPassword(!showPassword)}
+              ></i>
+            </span>
+          </div>
+
           <br />
+
           <label htmlFor="userRetypePswd" className="userPswd">
             Confirm Password
           </label>
-          <input
-            type={showRePassword ? "text" : "password"}
-            className="userPswd"
-            id="userRetypePswd"
-            placeholder="Re-type your password"
-            value={userData.newPassword}
-            onChange={(event) =>
-              setUserData({ ...userData, newPassword: event.target.value })
-            }
-          />
-          <i
-            className={`far ${
-              showPassword ? "fa-eye" : "fa-eye-slash"
-            } showRePassword`}
-            onClick={() => setShowRePassword(!showRePassword)}
-          ></i>
+          <div>
+            <input
+              type={showRePassword ? "text" : "password"}
+              className="userPswd"
+              id="userRetypePswd"
+              placeholder="Re-type your password"
+              value={userData.newPassword}
+              onChange={(event) =>
+                setUserData({ ...userData, newPassword: event.target.value })
+              }
+            />
+            <span className="togglePswd">
+              <i
+                className={`far ${
+                  showPassword ? "fa-eye" : "fa-eye-slash"
+                } showRePassword`}
+                onClick={() => setShowRePassword(!showRePassword)}
+              ></i>
+            </span>
+          </div>
+
           <br />
           <div className="check">
             <input

@@ -7,4 +7,4 @@ CHANGES made after submission:
 5. Added `watch videos` button in Login, Watch later, playlist and history page when there are no videos.
 6. Made changes in controller (History comtroller).
 7. Added loader
-8. Added more breakpoints in Home page to improve responsiveness
+8. Added more breakpoints in Home page to improve responsiveness. Also improved responsiveness of Login and signup page. Show password icon was not aligned properly

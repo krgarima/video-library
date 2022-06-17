@@ -26,10 +26,12 @@ export default function History() {
     <aside className="home">
       <Filters />
       <div className="like-container">
-        <h1>From history ({historyVideos.length})</h1>
+        <h1 className="third-heading">
+          Visited videos ({historyVideos?.length})
+        </h1>
         <div className="flex-wrap">
           {encodedToken
-            ? historyVideos.map((historyVideo) => (
+            ? historyVideos?.map((historyVideo) => (
                 <div className="history-video" key={historyVideo._id}>
                   <VideoCard
                     video={historyVideo}
@@ -38,7 +40,7 @@ export default function History() {
                 </div>
               ))
             : ""}
-          {historyVideos.length === 0 && (
+          {historyVideos?.length === 0 && (
             <Link to="/">
               <button className="redirect-login-btn">Watch videos</button>
             </Link>

@@ -72,23 +72,27 @@ export default function Login() {
           <label htmlFor="userPswd" className="userPswd">
             Password
           </label>
-          <input
-            type={showPassword ? "text" : "password"}
-            className="userPswd"
-            id="userPswd"
-            placeholder="Enter your password"
-            value={password}
-            onChange={(e) => {
-              setError(false);
-              setPassword(e.target.value);
-            }}
-          />
-          <i
-            className={`far ${
-              showPassword ? "fa-eye" : "fa-eye-slash"
-            } showLoginPassword`}
-            onClick={() => setShowPassword(!showPassword)}
-          ></i>
+          <div>
+            <input
+              type={showPassword ? "text" : "password"}
+              className="userPswd"
+              id="userPswd"
+              placeholder="Enter your password"
+              value={password}
+              onChange={(e) => {
+                setError(false);
+                setPassword(e.target.value);
+              }}
+            />
+            <span className="togglePswd">
+              <i
+                className={`far ${
+                  showPassword ? "fa-eye" : "fa-eye-slash"
+                } showLoginPassword`}
+                onClick={() => setShowPassword(!showPassword)}
+              ></i>
+            </span>
+          </div>
           <br />
           <div className="check">
             <input
@@ -100,9 +104,6 @@ export default function Login() {
               onClick={() => setRememberPassword(!rememberPassword)}
             />
             <label htmlFor="userAgreement">Remember me</label>
-            {/* <Link to="/" rel="noopener noreferrer" className="forgotPswd">
-              Forgot your password?
-            </Link> */}
           </div>
           <br />
           <button
