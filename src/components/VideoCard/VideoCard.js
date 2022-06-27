@@ -1,7 +1,6 @@
-import { Link } from "react-router-dom";
+import { Link, useLocation, useNavigate } from "react-router-dom";
 import React, { useState } from "react";
 import { useDispatch } from "react-redux";
-import { useNavigate } from "react-router-dom";
 import { ToastContainer, toast } from "react-toastify";
 import "react-toastify/dist/ReactToastify.css";
 import { addToLikes } from "../../features/like/like-slice";
@@ -17,6 +16,7 @@ export default function VideoCard({ video, selectOptions }) {
   const [showOptions, setShowOptions] = useState(true);
   let encodedToken = "";
   const dispatch = useDispatch();
+  const location = useLocation();
 
   const notify = (msg) =>
     toast.success(msg, {
@@ -37,7 +37,7 @@ export default function VideoCard({ video, selectOptions }) {
       <div className="title">
         <strong>{title}</strong>
         <i
-          className="fas fa-ellipsis-v"
+          className={location.pathname === "/" ? `hide` : `fas fa-ellipsis-v`}
           onClick={() => setShowOptions(!showOptions)}
         >
           <ul className={`options ${showOptions ? "showOptions" : ""}`}>

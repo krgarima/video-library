@@ -47,6 +47,10 @@
   position: relative;
 }
 
+.hide {
+  display: none;
+}
+
 .options {
   position: absolute;
   top: 1.3rem;

@@ -32,7 +32,10 @@ export default function Navbar() {
 
   return (
     <div className="navbar">
-      <div className="logo">~ Vokkal ~</div>
+      <Link to="/">
+        <div className="logo">~ Vokkal ~</div>
+      </Link>
+
       <div className="searchArea large-search">
         <input
           value={searchValue}
