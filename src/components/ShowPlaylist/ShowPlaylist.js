@@ -17,7 +17,6 @@ export default function ShowPlaylist() {
   const selectOptions = [
     { name: "Add to likes", functionCall: "addToLikes" },
     { name: "Add to Watch later", functionCall: "addToWatchLater" },
-    // { name: "Remove from Playlist", functionCall: "deleteVideo" },
   ];
 
   useEffect(() => {
@@ -55,7 +54,7 @@ export default function ShowPlaylist() {
                   <div className="playlist-video" key={videoId}>
                     <VideoCard video={video} selectOptions={selectOptions} />
                     <i
-                      className="fas fa-3x fa-trash-alt"
+                      className="fas fa-2x fa-trash-alt"
                       onClick={() => {
                         dispatch(deleteVideo([videoId.videoId, video._id]));
                         notify(
