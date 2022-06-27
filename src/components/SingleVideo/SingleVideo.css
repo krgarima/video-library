@@ -1,5 +1,5 @@
 .singleVideo {
-  padding-top: 12vh;
+  margin-top: 12vh;
   min-height: 100vh;
   font-size: 1rem;
   display: flex;
@@ -197,7 +197,7 @@
 
 @media only screen and (max-width: 500px) {
   .singleVideo {
-    padding-top: 15vh;
+    margin-top: 15vh;
   }
   .video {
     height: 45vh;
