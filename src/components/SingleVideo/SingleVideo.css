@@ -195,9 +195,27 @@
   border: 1px solid var(--primary-color);
 }
 
+@media only screen and (max-width: 1000px) {
+  .saveToPlaylist,
+  .createNewPlaylist {
+    top: 32%;
+    left: 25%;
+    height: 12rem;
+    width: 15rem;
+  }
+}
+
+@media only screen and (max-width: 800px) {
+  .saveToPlaylist,
+  .createNewPlaylist {
+    top: 32%;
+    left: 25%;
+  }
+}
+
 @media only screen and (max-width: 500px) {
   .singleVideo {
-    margin-top: 15vh;
+    margin-top: 12vh;
   }
   .video {
     height: 45vh;
@@ -213,6 +231,19 @@
     padding: 5px 12px;
   }
   .videoTitle {
-    margin: 3rem 0 1rem 1rem;
+    margin: 5rem 0 1rem 1rem;
+  }
+  .saveToPlaylist,
+  .createNewPlaylist {
+    top: 32%;
+    left: 20%;
+  }
+}
+
+@media only screen and (max-width: 500px) {
+  .saveToPlaylist,
+  .createNewPlaylist {
+    top: 32%;
+    left: 12%;
   }
 }
